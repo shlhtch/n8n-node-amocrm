@@ -39,7 +39,22 @@ export async function apiRequest(
 
 	// Добавляем proxy, если он указан
 	if (proxyUrl && proxyUrl.trim() !== '') {
-		options.proxy = proxyUrl;
+		try {
+			const url = new URL(proxyUrl);
+			options.proxy = {
+				host: url.hostname,
+				port: parseInt(url.port, 10) || (url.protocol === 'https:' ? 443 : 80),
+				protocol: url.protocol.replace(':', ''),
+				auth: url.username && url.password ? {
+					username: url.username,
+					password: url.password,
+				} : undefined,
+			};
+		} catch (error) {
+			throw new NodeOperationError(this.getNode(), 'Invalid proxy URL format', {
+				description: 'Proxy URL must be in format: http://username:password@host:port',
+			});
+		}
 	}
 
 	try {
