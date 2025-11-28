@@ -3,6 +3,7 @@ import { addJsonParametersDescription } from '../../_components/JsonParametersDe
 import { catalogModelDescription } from '../model';
 import { addRequestId } from '../../_components/RequestId';
 import { ICatalogsProperties } from '../../interfaces';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {

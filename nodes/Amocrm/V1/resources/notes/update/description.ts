@@ -2,6 +2,7 @@ import { IDisplayOptions } from 'n8n-workflow';
 import { INotesProperties } from '../../interfaces';
 import { addJsonParametersDescription } from '../../_components/JsonParametersDescription';
 import { entityType, getNotesDescription } from '../entity';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
