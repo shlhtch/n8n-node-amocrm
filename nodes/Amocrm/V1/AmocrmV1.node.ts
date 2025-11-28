@@ -115,6 +115,23 @@ export class AmocrmV1 implements INodeType {
 					],
 					default: 'account',
 				},
+				{
+					displayName: 'Options',
+					name: 'options',
+					type: 'collection',
+					placeholder: 'Add Option',
+					default: {},
+					options: [
+						{
+							displayName: 'Proxy',
+							name: 'proxy',
+							type: 'string',
+							default: '',
+							placeholder: 'http://username:password@host:port',
+							description: 'Proxy server URL (e.g., http://mxzwdHpY:E8rQ7G82@45.10.108.154:62958)',
+						},
+					],
+				},
 				...account.descriptions,
 				...companies.descriptions,
 				...contacts.descriptions,

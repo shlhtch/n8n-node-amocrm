@@ -23,6 +23,10 @@ export async function apiRequest(
 		authenticationMethod === 'oAuth2' ? 'amocrmOAuth2Api' : 'amocrmLongLivedApi';
 	const credentials = await this.getCredentials(credentialType);
 
+	// Получаем proxy из опций ноды
+	const optionsParam = (this.getNodeParameter('options', 0, {}) as IDataObject) || {};
+	const proxyUrl = optionsParam.proxy as string | undefined;
+
 	const options: IHttpRequestOptions = {
 		method,
 		body,
@@ -32,6 +36,12 @@ export async function apiRequest(
 			'content-type': 'application/json; charset=utf-8',
 		},
 	};
+
+	// Добавляем proxy, если он указан
+	if (proxyUrl && proxyUrl.trim() !== '') {
+		options.proxy = proxyUrl;
+	}
+
 	try {
 		await lock.acquire();
 		return await this.helpers.httpRequestWithAuthentication.call(this, credentialType, options);
