@@ -6,6 +6,7 @@ import { addLimitDescription } from '../../_components/LimitDescription';
 import { addPageDescription } from '../../_components/PageDescription';
 import { addReturnAll } from '../../_components/ReturnAllDescription';
 import { addSortDescription } from '../../_components/SortDescription';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 import { entityType } from '../entity';
 
 const displayOptions: IDisplayOptions | undefined = {
@@ -61,6 +62,7 @@ export const description: INotesProperties = [
 		default: { sortSettings: { sort_by: 'updated_at', sort_order: 'asc' } },
 		displayOptions,
 		options: [
+			addProxyDescription(),
 			addSortDescription(undefined, [
 				{
 					name: 'Date Update',

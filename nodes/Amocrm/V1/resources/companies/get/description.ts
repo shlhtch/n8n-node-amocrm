@@ -7,6 +7,7 @@ import { addPageDescription } from '../../_components/PageDescription';
 import { addReturnAll } from '../../_components/ReturnAllDescription';
 import { addSortDescription } from '../../_components/SortDescription';
 import { addWithDescription } from '../../_components/WithDescription';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
@@ -87,6 +88,7 @@ export const description: ICompaniesProperties = [
 		default: { sortSettings: { sort_by: 'created_at', sort_order: 'asc' } },
 		displayOptions,
 		options: [
+			addProxyDescription(),
 			addSortDescription(undefined, [
 				{
 					name: 'Date Update',
