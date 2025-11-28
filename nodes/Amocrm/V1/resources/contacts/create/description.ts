@@ -1,6 +1,7 @@
 import { IDisplayOptions, INodeProperties } from 'n8n-workflow';
 import { IContactsProperties } from '../../interfaces';
 import { addJsonParametersDescription } from '../../_components/JsonParametersDescription';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 import { makeContactModelDescription } from '../model';
 
 const displayOptions: IDisplayOptions | undefined = {
@@ -55,6 +56,17 @@ export const description: IContactsProperties = [
 				name: 'contact',
 				values: createContactModel,
 			},
+		],
+	},
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
 		],
 	},
 ];

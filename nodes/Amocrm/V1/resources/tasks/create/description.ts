@@ -2,6 +2,7 @@ import { IDisplayOptions, INodeProperties } from 'n8n-workflow';
 import { ITasksProperties } from '../../interfaces';
 import { addJsonParametersDescription } from '../../_components/JsonParametersDescription';
 import { taskModelDescription } from '../model';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
@@ -38,6 +39,17 @@ export const description: ITasksProperties = [
 				name: 'task',
 				values: createTaskModel,
 			},
+		],
+	},
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
 		],
 	},
 ];

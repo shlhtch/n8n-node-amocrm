@@ -22,4 +22,15 @@ export const description: INotesProperties = [
 			required: true,
 		},
 	]),
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
+		],
+	},
 ];

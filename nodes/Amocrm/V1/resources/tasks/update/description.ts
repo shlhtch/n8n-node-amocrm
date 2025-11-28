@@ -3,6 +3,7 @@ import { addJsonParametersDescription } from '../../_components/JsonParametersDe
 import { taskModelDescription } from '../model';
 import { addRequestId } from '../../_components/RequestId';
 import { ITasksProperties } from '../../interfaces';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
@@ -37,6 +38,17 @@ export const description: ITasksProperties = [
 				name: 'task',
 				values: updateTaskModel,
 			},
+		],
+	},
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
 		],
 	},
 ];

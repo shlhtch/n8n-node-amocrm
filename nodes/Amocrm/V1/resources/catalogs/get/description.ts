@@ -13,6 +13,17 @@ const displayOptions: IDisplayOptions | undefined = {
 
 export const description: ICatalogsProperties = [
 	addReturnAll(displayOptions),
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
+		],
+	},
 	addPageDescription({
 		show: {
 			...displayOptions.show,

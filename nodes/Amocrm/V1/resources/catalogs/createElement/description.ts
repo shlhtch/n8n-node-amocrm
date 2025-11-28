@@ -3,6 +3,7 @@ import { ICatalogsProperties } from '../../interfaces';
 import { addJsonParametersDescription } from '../../_components/JsonParametersDescription';
 import { catalogElementModelDescription } from '../model';
 import { addRequestId } from '../../_components/RequestId';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
@@ -56,6 +57,17 @@ export const description: ICatalogsProperties = [
 				name: 'element',
 				values: createCatalogModel,
 			},
+		],
+	},
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
 		],
 	},
 ];

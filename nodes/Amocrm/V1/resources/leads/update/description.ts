@@ -3,6 +3,7 @@ import { ILeadsProperties } from '../../interfaces';
 import { addJsonParametersDescription } from '../../_components/JsonParametersDescription';
 import { makeLeadModelDescription } from '../model';
 import { addRequestId } from '../../_components/RequestId';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
@@ -46,6 +47,17 @@ export const description: ILeadsProperties = [
 				name: 'lead',
 				values: updateLeadModel,
 			},
+		],
+	},
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
 		],
 	},
 ];

@@ -41,6 +41,9 @@ export async function apiRequest(
 	if (proxyUrl && proxyUrl.trim() !== '') {
 		try {
 			const url = new URL(proxyUrl);
+			const proxyHost = url.hostname;
+			const proxyPort = url.port || (url.protocol === 'https:' ? '443' : '80');
+			
 			options.proxy = {
 				host: url.hostname,
 				port: parseInt(url.port, 10) || (url.protocol === 'https:' ? 443 : 80),
@@ -50,6 +53,10 @@ export async function apiRequest(
 					password: url.password,
 				} : undefined,
 			};
+			
+			// Логируем использование proxy
+			const nodeName = this.getNode ? this.getNode().name : 'AmoCRM';
+			console.log(`[${nodeName}] Using proxy: ${url.protocol}//${proxyHost}:${proxyPort} for request to ${endpoint}`);
 		} catch (error) {
 			throw new NodeOperationError(this.getNode(), 'Invalid proxy URL format', {
 				description: 'Proxy URL must be in format: http://username:password@host:port',

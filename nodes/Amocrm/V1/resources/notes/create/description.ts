@@ -14,4 +14,15 @@ export const description: INotesProperties = [
 	...entityType(displayOptions),
 	...addJsonParametersDescription(displayOptions),
 	...getNotesDescription(displayOptions),
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
+		],
+	},
 ];

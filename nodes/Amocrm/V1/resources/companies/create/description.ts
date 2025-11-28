@@ -3,6 +3,7 @@ import { ICompaniesProperties } from '../../interfaces';
 import { addJsonParametersDescription } from '../../_components/JsonParametersDescription';
 import { makeCompanyModelDescription } from '../model';
 import { addRequestId } from '../../_components/RequestId';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
@@ -39,6 +40,17 @@ export const description: ICompaniesProperties = [
 				name: 'company',
 				values: createCompanyModel,
 			},
+		],
+	},
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
 		],
 	},
 ];

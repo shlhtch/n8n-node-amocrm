@@ -44,4 +44,15 @@ export const description: ICatalogsProperties = [
 			},
 		],
 	},
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
+		],
+	},
 ];

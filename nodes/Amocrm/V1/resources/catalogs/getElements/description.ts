@@ -4,6 +4,7 @@ import { addLimitDescription } from '../../_components/LimitDescription';
 import { addPageDescription } from '../../_components/PageDescription';
 import { addReturnAll } from '../../_components/ReturnAllDescription';
 import { addFilterDescription } from '../../_components/FilterDescription';
+import { addProxyDescription } from '../../_components/ProxyDescription';
 
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
@@ -43,6 +44,17 @@ export const description: ICatalogsProperties = [
 			description: 'Element IDs separated by commas',
 		},
 	]),
+	{
+		displayName: 'Options',
+		name: 'options',
+		type: 'collection',
+		placeholder: 'Add Option',
+		default: {},
+		displayOptions,
+		options: [
+			addProxyDescription(),
+		],
+	},
 	addPageDescription({
 		show: {
 			...displayOptions.show,
