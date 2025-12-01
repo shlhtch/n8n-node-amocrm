@@ -39,8 +39,6 @@ export async function router(this: IExecuteFunctions): Promise<INodeExecutionDat
 				responseData = await notes[amo.operation].execute.call(this, i);
 			} else if (amo.resource === 'catalogs') {
 				responseData = await catalogs[amo.operation].execute.call(this, i);
-			} else if (amo.resource === 'catalogs') {
-				responseData = await catalogs[amo.operation].execute.call(this, i);
 			} else if (amo.resource === 'entities') {
 				responseData = await entities[amo.operation].execute.call(this, i);
 			}
