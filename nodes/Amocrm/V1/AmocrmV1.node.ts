@@ -16,6 +16,7 @@ import * as tasks from './resources/tasks';
 import * as companies from './resources/companies';
 import * as notes from './resources/notes';
 import * as catalogs from './resources/catalogs';
+import * as entities from './resources/entities';
 
 export class AmocrmV1 implements INodeType {
 	description: INodeTypeDescription;
@@ -112,6 +113,10 @@ export class AmocrmV1 implements INodeType {
 							name: 'Task',
 							value: 'tasks',
 						},
+						{
+							name: 'Entities',
+							value: 'entities',
+						},
 					],
 					default: 'account',
 				},
@@ -122,6 +127,7 @@ export class AmocrmV1 implements INodeType {
 				...tasks.descriptions,
 				...notes.descriptions,
 				...catalogs.descriptions,
+				...entities.descriptions,
 			],
 		};
 	}

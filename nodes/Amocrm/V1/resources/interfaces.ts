@@ -17,6 +17,13 @@ type IAmoMap = {
 		| 'getCatalogElements'
 		| 'addCatalogElements'
 		| 'updateCatalogElements';
+	entities:
+		| 'getLinks'
+		| 'link'
+		| 'unlink'
+		| 'getBulkLinks'
+		| 'bulkLink'
+		| 'bulkUnlink';
 };
 
 export type IAmo = AllEntities<IAmoMap>;
@@ -31,6 +38,7 @@ export type IStatusesAmo = Entity<IAmoMap, 'statuses'>;
 export type ITasksAmo = Entity<IAmoMap, 'tasks'>;
 export type INotesAmo = Entity<IAmoMap, 'notes'>;
 export type ICatalogsAmo = Entity<IAmoMap, 'catalogs'>;
+export type IEntitiesAmo = Entity<IAmoMap, 'entities'>;
 
 export type IAccountProperties = PropertiesOf<IAccountAmo>;
 export type ILeadsProperties = PropertiesOf<ILeadsAmo>;
@@ -42,6 +50,7 @@ export type IStatusesProperties = PropertiesOf<IStatusesAmo>;
 export type ICatalogsProperties = PropertiesOf<ICatalogsAmo>;
 export type ITasksProperties = PropertiesOf<ITasksAmo>;
 export type INotesProperties = PropertiesOf<INotesAmo>;
+export type IEntitiesProperties = PropertiesOf<IEntitiesAmo>;
 
 export interface IAttachment {
 	fields: {
