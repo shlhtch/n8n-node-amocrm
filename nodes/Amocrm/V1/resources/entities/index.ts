@@ -22,6 +22,24 @@ export const descriptions: INodeProperties[] = [
 		},
 		options: [
 			{
+				name: 'Bulk Link Entities',
+				value: 'bulkLink',
+				description: 'Link entities to multiple main entities',
+				action: 'Link entities to multiple main entities',
+			},
+			{
+				name: 'Bulk Unlink Entities',
+				value: 'bulkUnlink',
+				description: 'Unlink entities from multiple main entities',
+				action: 'Unlink entities from multiple main entities',
+			},
+			{
+				name: 'Get Bulk Links',
+				value: 'getBulkLinks',
+				description: 'Get links for multiple entities',
+				action: 'Get links for multiple entities',
+			},
+			{
 				name: 'Get Links',
 				value: 'getLinks',
 				description: 'Get list of linked entities',
@@ -38,24 +56,6 @@ export const descriptions: INodeProperties[] = [
 				value: 'unlink',
 				description: 'Unlink entities from main entity',
 				action: 'Unlink entities from main entity',
-			},
-			{
-				name: 'Get Bulk Links',
-				value: 'getBulkLinks',
-				description: 'Get links for multiple entities',
-				action: 'Get links for multiple entities',
-			},
-			{
-				name: 'Bulk Link Entities',
-				value: 'bulkLink',
-				description: 'Link entities to multiple main entities',
-				action: 'Link entities to multiple main entities',
-			},
-			{
-				name: 'Bulk Unlink Entities',
-				value: 'bulkUnlink',
-				description: 'Unlink entities from multiple main entities',
-				action: 'Unlink entities from multiple main entities',
 			},
 		],
 		default: 'getLinks',

@@ -1,5 +1,7 @@
 /* eslint-disable n8n-nodes-base/node-filename-against-convention */
 /* eslint-disable n8n-nodes-base/node-filename-against-convention */
+/* eslint-disable n8n-nodes-base/node-filename-against-convention */
+/* eslint-disable n8n-nodes-base/node-filename-against-convention */
 import {
 	IExecuteFunctions,
 	INodeType,
@@ -102,6 +104,10 @@ export class AmocrmV1 implements INodeType {
 							value: 'contacts',
 						},
 						{
+							name: 'Entity Link',
+							value: 'entities',
+						},
+						{
 							name: 'Lead',
 							value: 'leads',
 						},
@@ -112,10 +118,6 @@ export class AmocrmV1 implements INodeType {
 						{
 							name: 'Task',
 							value: 'tasks',
-						},
-						{
-							name: 'Entities',
-							value: 'entities',
 						},
 					],
 					default: 'account',

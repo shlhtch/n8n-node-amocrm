@@ -62,24 +62,24 @@ export const description: IEntitiesProperties = [
 			default: 'contacts',
 			options: [
 				{
-					name: 'Lead',
-					value: 'leads',
-				},
-				{
-					name: 'Contact',
-					value: 'contacts',
+					name: 'Catalog Element',
+					value: 'catalog_elements',
 				},
 				{
 					name: 'Company',
 					value: 'companies',
 				},
 				{
+					name: 'Contact',
+					value: 'contacts',
+				},
+				{
 					name: 'Customer',
 					value: 'customers',
 				},
 				{
-					name: 'Catalog Element',
-					value: 'catalog_elements',
+					name: 'Lead',
+					value: 'leads',
 				},
 			],
 			description: 'Filter by linked entity type',
