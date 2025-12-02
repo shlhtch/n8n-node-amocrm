@@ -6,7 +6,7 @@ import { addProxyDescription } from '../../_components/ProxyDescription';
 const displayOptions: IDisplayOptions | undefined = {
 	show: {
 		resource: ['entities'],
-		operation: ['getBulkLinks'],
+		operation: ['getMultipleLinks'],
 	},
 };
 

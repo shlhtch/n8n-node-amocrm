@@ -21,9 +21,9 @@ type IAmoMap = {
 		| 'getLinks'
 		| 'link'
 		| 'unlink'
-		| 'getBulkLinks'
-		| 'bulkLink'
-		| 'bulkUnlink';
+		| 'getMultipleLinks'
+		| 'multipleLink'
+		| 'multipleUnlink';
 };
 
 export type IAmo = AllEntities<IAmoMap>;
